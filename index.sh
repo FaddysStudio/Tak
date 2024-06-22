@@ -1,24 +1,24 @@
-echo "i [ 13 + 0 ] 0 1" > sco/00.sco ; csound -o audio/00.wav index.orc sco/00.sco ; aplay audio/00.wav
-echo "i [ 13 + 0.041666666666666664 ] 0 1" > sco/01.sco ; csound -o audio/01.wav index.orc sco/01.sco ; aplay audio/01.wav
-echo "i [ 13 + 0.08333333333333333 ] 0 1" > sco/02.sco ; csound -o audio/02.wav index.orc sco/02.sco ; aplay audio/02.wav
-echo "i [ 13 + 0.125 ] 0 1" > sco/03.sco ; csound -o audio/03.wav index.orc sco/03.sco ; aplay audio/03.wav
-echo "i [ 13 + 0.16666666666666666 ] 0 1" > sco/04.sco ; csound -o audio/04.wav index.orc sco/04.sco ; aplay audio/04.wav
-echo "i [ 13 + 0.20833333333333334 ] 0 1" > sco/05.sco ; csound -o audio/05.wav index.orc sco/05.sco ; aplay audio/05.wav
-echo "i [ 13 + 0.25 ] 0 1" > sco/06.sco ; csound -o audio/06.wav index.orc sco/06.sco ; aplay audio/06.wav
-echo "i [ 13 + 0.2916666666666667 ] 0 1" > sco/07.sco ; csound -o audio/07.wav index.orc sco/07.sco ; aplay audio/07.wav
-echo "i [ 13 + 0.3333333333333333 ] 0 1" > sco/08.sco ; csound -o audio/08.wav index.orc sco/08.sco ; aplay audio/08.wav
-echo "i [ 13 + 0.375 ] 0 1" > sco/09.sco ; csound -o audio/09.wav index.orc sco/09.sco ; aplay audio/09.wav
-echo "i [ 13 + 0.4166666666666667 ] 0 1" > sco/10.sco ; csound -o audio/10.wav index.orc sco/10.sco ; aplay audio/10.wav
-echo "i [ 13 + 0.4583333333333333 ] 0 1" > sco/11.sco ; csound -o audio/11.wav index.orc sco/11.sco ; aplay audio/11.wav
-echo "i [ 13 + 0.5 ] 0 1" > sco/12.sco ; csound -o audio/12.wav index.orc sco/12.sco ; aplay audio/12.wav
-echo "i [ 13 + 0.5416666666666666 ] 0 1" > sco/13.sco ; csound -o audio/13.wav index.orc sco/13.sco ; aplay audio/13.wav
-echo "i [ 13 + 0.5833333333333334 ] 0 1" > sco/14.sco ; csound -o audio/14.wav index.orc sco/14.sco ; aplay audio/14.wav
-echo "i [ 13 + 0.625 ] 0 1" > sco/15.sco ; csound -o audio/15.wav index.orc sco/15.sco ; aplay audio/15.wav
-echo "i [ 13 + 0.6666666666666666 ] 0 1" > sco/16.sco ; csound -o audio/16.wav index.orc sco/16.sco ; aplay audio/16.wav
-echo "i [ 13 + 0.7083333333333334 ] 0 1" > sco/17.sco ; csound -o audio/17.wav index.orc sco/17.sco ; aplay audio/17.wav
-echo "i [ 13 + 0.75 ] 0 1" > sco/18.sco ; csound -o audio/18.wav index.orc sco/18.sco ; aplay audio/18.wav
-echo "i [ 13 + 0.7916666666666666 ] 0 1" > sco/19.sco ; csound -o audio/19.wav index.orc sco/19.sco ; aplay audio/19.wav
-echo "i [ 13 + 0.8333333333333334 ] 0 1" > sco/20.sco ; csound -o audio/20.wav index.orc sco/20.sco ; aplay audio/20.wav
-echo "i [ 13 + 0.875 ] 0 1" > sco/21.sco ; csound -o audio/21.wav index.orc sco/21.sco ; aplay audio/21.wav
-echo "i [ 13 + 0.9166666666666666 ] 0 1" > sco/22.sco ; csound -o audio/22.wav index.orc sco/22.sco ; aplay audio/22.wav
-echo "i [ 13 + 0.9583333333333334 ] 0 1" > sco/23.sco ; csound -o audio/23.wav index.orc sco/23.sco ; aplay audio/23.wav
+echo "i [ 13 + 0 ] 0 1" > sco/00.sco ; echo "i [ 13 + 0.041666666666666664 ] 0.001953125 1" >> sco/00.sco ; echo "i [ 13 + 0.08333333333333333 ] 0.00390625 1" >> sco/00.sco ; csound -o audio/00.wav index.orc sco/00.sco ; aplay audio/00.wav
+echo "i [ 13 + 0.041666666666666664 ] 0 1" > sco/01.sco ; echo "i [ 13 + 0.08333333333333333 ] 0.001953125 1" >> sco/01.sco ; echo "i [ 13 + 0.125 ] 0.00390625 1" >> sco/01.sco ; csound -o audio/01.wav index.orc sco/01.sco ; aplay audio/01.wav
+echo "i [ 13 + 0.08333333333333333 ] 0 1" > sco/02.sco ; echo "i [ 13 + 0.125 ] 0.001953125 1" >> sco/02.sco ; echo "i [ 13 + 0.16666666666666666 ] 0.00390625 1" >> sco/02.sco ; csound -o audio/02.wav index.orc sco/02.sco ; aplay audio/02.wav
+echo "i [ 13 + 0.125 ] 0 1" > sco/03.sco ; echo "i [ 13 + 0.16666666666666666 ] 0.001953125 1" >> sco/03.sco ; echo "i [ 13 + 0.20833333333333334 ] 0.00390625 1" >> sco/03.sco ; csound -o audio/03.wav index.orc sco/03.sco ; aplay audio/03.wav
+echo "i [ 13 + 0.16666666666666666 ] 0 1" > sco/04.sco ; echo "i [ 13 + 0.20833333333333334 ] 0.001953125 1" >> sco/04.sco ; echo "i [ 13 + 0.25 ] 0.00390625 1" >> sco/04.sco ; csound -o audio/04.wav index.orc sco/04.sco ; aplay audio/04.wav
+echo "i [ 13 + 0.20833333333333334 ] 0 1" > sco/05.sco ; echo "i [ 13 + 0.25 ] 0.001953125 1" >> sco/05.sco ; echo "i [ 13 + 0.2916666666666667 ] 0.00390625 1" >> sco/05.sco ; csound -o audio/05.wav index.orc sco/05.sco ; aplay audio/05.wav
+echo "i [ 13 + 0.25 ] 0 1" > sco/06.sco ; echo "i [ 13 + 0.2916666666666667 ] 0.001953125 1" >> sco/06.sco ; echo "i [ 13 + 0.3333333333333333 ] 0.00390625 1" >> sco/06.sco ; csound -o audio/06.wav index.orc sco/06.sco ; aplay audio/06.wav
+echo "i [ 13 + 0.2916666666666667 ] 0 1" > sco/07.sco ; echo "i [ 13 + 0.3333333333333333 ] 0.001953125 1" >> sco/07.sco ; echo "i [ 13 + 0.375 ] 0.00390625 1" >> sco/07.sco ; csound -o audio/07.wav index.orc sco/07.sco ; aplay audio/07.wav
+echo "i [ 13 + 0.3333333333333333 ] 0 1" > sco/08.sco ; echo "i [ 13 + 0.375 ] 0.001953125 1" >> sco/08.sco ; echo "i [ 13 + 0.4166666666666667 ] 0.00390625 1" >> sco/08.sco ; csound -o audio/08.wav index.orc sco/08.sco ; aplay audio/08.wav
+echo "i [ 13 + 0.375 ] 0 1" > sco/09.sco ; echo "i [ 13 + 0.4166666666666667 ] 0.001953125 1" >> sco/09.sco ; echo "i [ 13 + 0.4583333333333333 ] 0.00390625 1" >> sco/09.sco ; csound -o audio/09.wav index.orc sco/09.sco ; aplay audio/09.wav
+echo "i [ 13 + 0.4166666666666667 ] 0 1" > sco/10.sco ; echo "i [ 13 + 0.4583333333333333 ] 0.001953125 1" >> sco/10.sco ; echo "i [ 13 + 0.5 ] 0.00390625 1" >> sco/10.sco ; csound -o audio/10.wav index.orc sco/10.sco ; aplay audio/10.wav
+echo "i [ 13 + 0.4583333333333333 ] 0 1" > sco/11.sco ; echo "i [ 13 + 0.5 ] 0.001953125 1" >> sco/11.sco ; echo "i [ 13 + 0.5416666666666666 ] 0.00390625 1" >> sco/11.sco ; csound -o audio/11.wav index.orc sco/11.sco ; aplay audio/11.wav
+echo "i [ 13 + 0.5 ] 0 1" > sco/12.sco ; echo "i [ 13 + 0.5416666666666666 ] 0.001953125 1" >> sco/12.sco ; echo "i [ 13 + 0.5833333333333334 ] 0.00390625 1" >> sco/12.sco ; csound -o audio/12.wav index.orc sco/12.sco ; aplay audio/12.wav
+echo "i [ 13 + 0.5416666666666666 ] 0 1" > sco/13.sco ; echo "i [ 13 + 0.5833333333333334 ] 0.001953125 1" >> sco/13.sco ; echo "i [ 13 + 0.625 ] 0.00390625 1" >> sco/13.sco ; csound -o audio/13.wav index.orc sco/13.sco ; aplay audio/13.wav
+echo "i [ 13 + 0.5833333333333334 ] 0 1" > sco/14.sco ; echo "i [ 13 + 0.625 ] 0.001953125 1" >> sco/14.sco ; echo "i [ 13 + 0.6666666666666666 ] 0.00390625 1" >> sco/14.sco ; csound -o audio/14.wav index.orc sco/14.sco ; aplay audio/14.wav
+echo "i [ 13 + 0.625 ] 0 1" > sco/15.sco ; echo "i [ 13 + 0.6666666666666666 ] 0.001953125 1" >> sco/15.sco ; echo "i [ 13 + 0.7083333333333334 ] 0.00390625 1" >> sco/15.sco ; csound -o audio/15.wav index.orc sco/15.sco ; aplay audio/15.wav
+echo "i [ 13 + 0.6666666666666666 ] 0 1" > sco/16.sco ; echo "i [ 13 + 0.7083333333333334 ] 0.001953125 1" >> sco/16.sco ; echo "i [ 13 + 0.75 ] 0.00390625 1" >> sco/16.sco ; csound -o audio/16.wav index.orc sco/16.sco ; aplay audio/16.wav
+echo "i [ 13 + 0.7083333333333334 ] 0 1" > sco/17.sco ; echo "i [ 13 + 0.75 ] 0.001953125 1" >> sco/17.sco ; echo "i [ 13 + 0.7916666666666666 ] 0.00390625 1" >> sco/17.sco ; csound -o audio/17.wav index.orc sco/17.sco ; aplay audio/17.wav
+echo "i [ 13 + 0.75 ] 0 1" > sco/18.sco ; echo "i [ 13 + 0.7916666666666666 ] 0.001953125 1" >> sco/18.sco ; echo "i [ 13 + 0.8333333333333334 ] 0.00390625 1" >> sco/18.sco ; csound -o audio/18.wav index.orc sco/18.sco ; aplay audio/18.wav
+echo "i [ 13 + 0.7916666666666666 ] 0 1" > sco/19.sco ; echo "i [ 13 + 0.8333333333333334 ] 0.001953125 1" >> sco/19.sco ; echo "i [ 13 + 0.875 ] 0.00390625 1" >> sco/19.sco ; csound -o audio/19.wav index.orc sco/19.sco ; aplay audio/19.wav
+echo "i [ 13 + 0.8333333333333334 ] 0 1" > sco/20.sco ; echo "i [ 13 + 0.875 ] 0.001953125 1" >> sco/20.sco ; echo "i [ 13 + 0.9166666666666666 ] 0.00390625 1" >> sco/20.sco ; csound -o audio/20.wav index.orc sco/20.sco ; aplay audio/20.wav
+echo "i [ 13 + 0.875 ] 0 1" > sco/21.sco ; echo "i [ 13 + 0.9166666666666666 ] 0.001953125 1" >> sco/21.sco ; echo "i [ 13 + 0.9583333333333334 ] 0.00390625 1" >> sco/21.sco ; csound -o audio/21.wav index.orc sco/21.sco ; aplay audio/21.wav
+echo "i [ 13 + 0.9166666666666666 ] 0 1" > sco/22.sco ; echo "i [ 13 + 0.9583333333333334 ] 0.001953125 1" >> sco/22.sco ; echo "i [ 13 + 0 ] 0.00390625 1" >> sco/22.sco ; csound -o audio/22.wav index.orc sco/22.sco ; aplay audio/22.wav
+echo "i [ 13 + 0.9583333333333334 ] 0 1" > sco/23.sco ; echo "i [ 13 + 0 ] 0.001953125 1" >> sco/23.sco ; echo "i [ 13 + 0.041666666666666664 ] 0.00390625 1" >> sco/23.sco ; csound -o audio/23.wav index.orc sco/23.sco ; aplay audio/23.wav
