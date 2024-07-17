@@ -1,3 +1,5 @@
+#!/usr/bin/env roll
+
 # Faddy's Tak/Snare Synthesizer
 
 ?# if [ ! -d node_modules/@faddys/scenarist ]; then npm i @faddys/scenarist ; fi
@@ -11,38 +13,38 @@ ksmps = 32
 nchnls = 2
 0dbfs = 1
 
-giStrikeFT ftgen 0, 0, 256, 1, "marmstk1.wav", 0, 0, 0
+giStrikeFT ftgen 0, 0, 256, 1, "prerequisites/marmstk1.wav", 0, 0, 0
 giVibratoFT ftgen 0, 0, 128, 10, 1
 
 instr 13, tak
 
 aNote = 0
 
-iPitch init frac ( p1 )
+iPitch init p4/p5
 
 iAttack init 1/128
 iDecay init 1/64 
 iRelease init 1/64
 
+p3 init iAttack + iDecay + iRelease
+
 aMainSubAmplitude linseg 0, iAttack, 1, iDecay, .25, iRelease, 0
-aMainSubFrequency linseg cpsoct ( 10 + iPitch ), iAttack, cpsoct ( 7 + iPitch )
+aMainSubFrequency linseg cpsoct ( 10 + iPitch ), iAttack, cpsoct ( 8 + iPitch )
 
 aMainSub poscil aMainSubAmplitude, aMainSubFrequency
 
 aNote += aMainSub
 
 aHighSubAmplitude linseg 0, iAttack/8, 1, iDecay/8, .25, iRelease/8, 0
-aHighSubFrequency linseg cpsoct ( 12 + iPitch ), iAttack/2, cpsoct ( 9 + iPitch )
+aHighSubFrequency linseg cpsoct ( 12 + iPitch ), iAttack/2, cpsoct ( 8.5 + iPitch )
 
 aHighSub poscil aHighSubAmplitude, aHighSubFrequency
 
 aNote += aHighSub
 
-kGogobellAmplitude linseg 1, iAttack + iDecay, 0
+aGogobell gogobel 1, cpsoct ( 7 + iPitch ), .75, .75, giStrikeFT, 6.0, 0.3, giVibratoFT
 
-aGogobell gogobel 1, cpsoct ( 6 + iPitch ), .75, .75, giStrikeFT, 6.0, 0.3, giVibratoFT
-
-aNote += aGogobell/4
+aNote += aGogobell
 
 aSnatchAmplitude linseg 0, iAttack/8, 1, iDecay/8, 0
 aSnatchFrequency linseg cpsoct ( 13 + iPitch ), iAttack/2, cpsoct ( 11 + iPitch )
@@ -90,12 +92,13 @@ index += '0' .repeat ( 2 - index .length );
 
 let score = `sco/${ index }.sco`;
 let audio = `audio/${ index }.wav`;
+let gap = 512;
 
 console .log ( [
 
-`echo "i [ 13 + ${ step / tak .degrees } ] 0 1" > ${ score }`,
-`echo "i [ 13 + ${ ( step + 1 ) % tak .degrees / tak .degrees } ] ${ 1/512 } 1" >> ${ score }`,
-`echo "i [ 13 + ${ ( step + 2 ) % tak .degrees / tak .degrees } ] ${ 2/512 } 1" >> ${ score }`,
+`echo "i 13 0 1 ${ step } ${ tak .degrees }" > ${ score }`,
+`echo "i 13.1 ${ 1/gap } 1 ${ step + 1/3 } ${ tak .degrees }" >> ${ score }`,
+`echo "i 13.2 ${ 2/gap } 1 ${ step + 2/3 } ${ tak .degrees }" >> ${ score }`,
 `csound -o ${ audio } index.orc ${ score }`,
 `aplay ${ audio }`
 

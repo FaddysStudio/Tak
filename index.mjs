@@ -25,12 +25,13 @@ index += '0' .repeat ( 2 - index .length );
 
 let score = `sco/${ index }.sco`;
 let audio = `audio/${ index }.wav`;
+let gap = 512;
 
 console .log ( [
 
-`echo "i [ 13 + ${ step / tak .degrees } ] 0 1" > ${ score }`,
-`echo "i [ 13 + ${ ( step + 1 ) % tak .degrees / tak .degrees } ] ${ 1/512 } 1" >> ${ score }`,
-`echo "i [ 13 + ${ ( step + 2 ) % tak .degrees / tak .degrees } ] ${ 2/512 } 1" >> ${ score }`,
+`echo "i 13 0 1 ${ step } ${ tak .degrees }" > ${ score }`,
+`echo "i 13.1 ${ 1/gap } 1 ${ step + 1/3 } ${ tak .degrees }" >> ${ score }`,
+`echo "i 13.2 ${ 2/gap } 1 ${ step + 2/3 } ${ tak .degrees }" >> ${ score }`,
 `csound -o ${ audio } index.orc ${ score }`,
 `aplay ${ audio }`
 
